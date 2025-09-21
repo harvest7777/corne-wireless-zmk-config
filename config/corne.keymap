@@ -9,6 +9,15 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        cmdright {
+            bindings = <&kp RIGHT_COMMAND>;
+            key-positions = <41 38>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -53,10 +62,10 @@
 
             display-name = "raise";
             bindings = <
-&kp TAB           &kp N1          &kp N2        &kp N3        &kp N4                &kp N5               &kp N6           &kp N7                &kp N8    &kp N9     &kp N0  &kp BSPC
-&kp LEFT_SHIFT    &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3          &bt BT_SEL 4         &kp LEFT         &kp DOWN              &kp UP    &kp RIGHT  &trans  &trans
-&kp LEFT_CONTROL  &bt BT_CLR_ALL  &trans        &trans        &kp C_BRIGHTNESS_DEC  &kp K_VOLUME_DOWN    &kp K_VOLUME_UP  &kp C_BRIGHTNESS_INC  &trans    &trans     &trans  &trans
-                                                &kp LGUI      &trans                &kp SPACE            &kp RET          &trans                &kp RALT
+&kp TAB           &kp N1          &kp N2        &kp N3        &kp N4                &kp N5               &kp N6           &kp N7                &kp N8  &kp N9     &kp N0  &kp BSPC
+&kp LEFT_SHIFT    &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3          &bt BT_SEL 4         &kp LEFT         &kp DOWN              &kp UP  &kp RIGHT  &trans  &trans
+&kp LEFT_CONTROL  &bt BT_CLR_ALL  &trans        &trans        &kp C_BRIGHTNESS_DEC  &kp K_VOLUME_DOWN    &kp K_VOLUME_UP  &kp C_BRIGHTNESS_INC  &trans  &trans     &trans  &trans
+                                                &kp LGUI      &trans                &trans               &trans           &trans                &trans
             >;
         };
     };

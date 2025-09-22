@@ -11,9 +11,14 @@
     combos {
         compatible = "zmk,combos";
 
-        cmdright {
-            bindings = <&kp RIGHT_COMMAND>;
-            key-positions = <41 38>;
+        screenshot {
+            bindings = <&kp LG(LS(NUMBER_4))>;
+            key-positions = <36 17>;
+        };
+
+        emoji {
+            bindings = <&kp LC(LG(SPACE))>;
+            key-positions = <36 16>;
         };
     };
 

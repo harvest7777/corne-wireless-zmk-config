@@ -25,6 +25,48 @@
             bindings = <&kp LG(LS(NUMBER_3))>;
             key-positions = <36 16>;
         };
+
+        fjescape {
+            bindings = <&kp ESC>;
+            key-positions = <16 19>;
+        };
+    };
+
+    macros {
+        option_up: option_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(UP_ARROW)>;
+            label = "OPTION_UP";
+        };
+
+        option_left: option_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LEFT)>;
+            label = "OPTION_LEFT";
+        };
+
+        option_right: option_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(RIGHT)>;
+            label = "OPTION_RIGHT";
+        };
+
+        option_down: option_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(DOWN)>;
+            label = "OPTION_DOWN";
+        };
+
+        option_backspace: option_backspace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(BACKSPACE)>;
+            label = "OPTION_BACKSPACE";
+        };
     };
 
     keymap {
@@ -55,10 +97,10 @@
 
             display-name = "lower";
             bindings = <
-&kp TAB           &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE      &kp BSPC
-&kp LEFT_SHIFT    &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL        &kp LBKT              &kp RBKT               &kp BSLH      &kp GRAVE
-&kp LEFT_CONTROL  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS         &kp LBRC              &kp RBRC               &kp QUESTION  &kp TILDE
-                                    &kp LGUI  &trans    &kp SPACE    &kp RET    &kp KP_MULTIPLY  &kp RALT
+&kp TAB           &kp EXCL  &kp AT     &kp HASH       &kp DLLR         &kp PRCNT    &kp PIPE        &kp BACKSLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans        &kp BSPC
+&kp LEFT_SHIFT    &trans    &kp CARET  &kp AMPERSAND  &kp KP_ASTERISK  &kp TILDE    &kp UNDERSCORE  &kp PLUS       &kp LBKT              &kp RBKT               &trans        &trans
+&kp LEFT_CONTROL  &trans    &trans     &trans         &trans           &kp GRAVE    &kp KP_MINUS    &kp KP_EQUAL   &kp LBRC              &kp RBRC               &kp QUESTION  &trans
+                                       &trans         &trans           &kp SPACE    &kp RET         &trans         &kp RALT
             >;
         };
 
@@ -71,10 +113,10 @@
 
             display-name = "raise";
             bindings = <
-&kp TAB           &kp N1        &kp N2            &kp N3  &kp N4                &kp N5                  &kp N6             &kp N7           &kp N8  &kp N9     &kp N0  &kp BSPC
-&kp LEFT_SHIFT    &trans        &trans            &trans  &trans                &trans                  &kp LEFT           &kp DOWN         &kp UP  &kp RIGHT  &trans  &trans
-&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &trans  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans     &trans  &trans
-                                                  &trans  &trans                &trans                  &trans             &trans           &trans
+&kp TAB         &kp N1            &kp N2        &kp N3            &kp N4                &kp N5                  &kp N6        &kp N7        &kp N8      &kp N9         &kp N0  &kp BACKSPACE
+&kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp C_VOL_DN          &kp C_VOL_UP            &kp LEFT      &kp DOWN      &kp UP      &kp RIGHT      &trans  &option_backspace
+&trans          &trans            &trans        &trans            &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC    &option_left  &option_down  &option_up  &option_right  &trans  &trans
+                                                &trans            &trans                &trans                  &trans        &trans        &trans
             >;
         };
     };

@@ -28,7 +28,7 @@
 
         fjescape {
             bindings = <&kp ESC>;
-            key-positions = <16 19 15 20>;
+            key-positions = <16 31>;
         };
     };
 

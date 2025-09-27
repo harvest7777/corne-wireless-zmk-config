@@ -28,8 +28,7 @@
 
         fjescape {
             bindings = <&kp ESC>;
-            key-positions = <16 19 37>;
-            timeout-ms = <80>;
+            key-positions = <16 19 15 20>;
         };
     };
 

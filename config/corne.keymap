@@ -68,7 +68,7 @@
         new_behavior: new_behavior {
             compatible = "zmk,behavior-hold-tap";
             label = "NEW_BEHAVIOR";
-            bindings = <&mo>, <&kp>;
+            bindings = <&mo 3>, <&kp SPACE>;
 
             #binding-cells = <2>;
             flavor = "balanced";

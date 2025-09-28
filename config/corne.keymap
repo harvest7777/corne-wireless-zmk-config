@@ -64,6 +64,19 @@
         };
     };
 
+    behaviors {
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NEW_BEHAVIOR";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <40>;
+            flavor = "balanced";
+            tapping-term-ms = <50>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -76,42 +89,37 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB         &kp Q  &kp W  &kp E  &kp R             &kp T    &kp Y    &kp U      &kp I              &kp O    &kp P     &kp BSPC
-&kp ESC         &kp A  &kp S  &kp D  &kp F             &kp G    &kp H    &kp J      &kp K              &kp L    &kp SEMI  &kp SINGLE_QUOTE
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V             &kp B    &kp N    &kp M      &kp COMMA          &kp DOT  &kp FSLH  &kp LEFT_CONTROL
-                              &mo 2  &kp LEFT_COMMAND  &mo 1    &kp RET  &kp SPACE  &kp RIGHT_COMMAND
+&kp TAB           &kp Q  &kp W  &kp E  &kp R             &kp T    &kp Y    &kp U                  &kp I              &kp O    &kp P     &kp BSPC
+&kp LEFT_SHIFT    &kp A  &kp S  &kp D  &kp F             &kp G    &kp H    &kp J                  &kp K              &kp L    &kp SEMI  &kp SINGLE_QUOTE
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C  &kp V             &kp B    &kp N    &kp M                  &kp COMMA          &kp DOT  &kp FSLH  &kp ESC
+                                &mo 2  &kp LEFT_COMMAND  &mo 1    &kp RET  &new_behavior 3 SPACE  &kp RIGHT_COMMAND
             >;
         };
 
-        symbols {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            display-name = "lower";
+        coding {
             bindings = <
-&kp TAB           &kp EXCL  &kp AT     &kp HASH       &kp DLLR         &kp PRCNT    &kp PIPE        &kp BACKSLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans        &kp BSPC
-&kp LEFT_SHIFT    &trans    &kp CARET  &kp AMPERSAND  &kp KP_ASTERISK  &kp TILDE    &kp UNDERSCORE  &kp PLUS       &kp LBKT              &kp RBKT               &trans        &trans
-&kp LEFT_CONTROL  &trans    &trans     &trans         &trans           &kp GRAVE    &kp KP_MINUS    &kp KP_EQUAL   &kp LBRC              &kp RBRC               &kp QUESTION  &trans
-                                       &trans         &trans           &kp SPACE    &kp RET         &trans         &kp RALT
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp KP_LEFT_PARENTHESIS  &kp KP_RIGHT_PARENTHESIS  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT_BRACE           &kp RIGHT_BRACE           &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT_BRACKET         &kp RIGHT_BRACKET         &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &kp SPACE                &trans
             >;
         };
 
-        nums {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            display-name = "raise";
+        math {
             bindings = <
-&kp TAB         &kp N1            &kp N2        &kp N3            &kp N4                &kp N5                  &kp N6        &kp N7        &kp N8      &kp N9         &kp N0  &kp BACKSPACE
-&kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp C_VOL_DN          &kp C_VOL_UP            &kp LEFT      &kp DOWN      &kp UP      &kp RIGHT      &trans  &option_backspace
-&trans          &trans            &trans        &trans            &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC    &option_left  &option_down  &option_up  &option_right  &trans  &trans
-                                                &trans            &trans                &trans                  &trans        &trans        &trans
+&kp GRAVE       &kp N1     &kp N2         &kp N3         &kp N4            &kp N5           &kp N6           &kp N7        &kp N8          &kp N9  &kp N0         &kp BACKSPACE
+&kp LEFT_SHIFT  &kp TILDE  &kp BACKSLASH  &kp PIPE       &kp CARET         &kp AMPERSAND    &kp KP_ASTERISK  &kp KP_PLUS   &kp KP_EQUAL    &trans  &kp SEMICOLON  &trans
+&trans          &trans     &trans         &kp LESS_THAN  &kp GREATER_THAN  &trans           &kp KP_SLASH     &kp KP_MINUS  &kp UNDERSCORE  &trans  &trans         &trans
+                                          &trans         &trans            &trans           &trans           &kp SPACE     &trans
+            >;
+        };
+
+        controls {
+            bindings = <
+&trans  &trans  &trans     &trans    &trans     &kp LG(BSPC)    &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans  &kp BACKSPACE
+&trans  &trans  &kp LCTRL  &kp LALT  &kp LGUI   &kp BSPC        &kp LEFT      &kp DOWN      &kp UP      &kp RIGHT      &trans  &trans
+&trans  &trans  &trans     &trans    &trans     &kp LA(BSPC)    &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &trans  &trans
+                           &trans    &kp LSHFT  &trans          &trans        &trans        &trans
             >;
         };
     };

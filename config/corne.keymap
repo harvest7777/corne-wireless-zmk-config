@@ -68,11 +68,11 @@
         new_behavior: new_behavior {
             compatible = "zmk,behavior-hold-tap";
             label = "NEW_BEHAVIOR";
-            bindings = <&mo 3>, <&kp SPACE>;
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <50>;
+            tapping-term-ms = <200>;
         };
     };
 

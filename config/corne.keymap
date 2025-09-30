@@ -71,9 +71,9 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
         };
 
         kp_tap: kp_tap {
@@ -82,8 +82,8 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
             flavor = "tap-preferred";
         };
     };
@@ -100,10 +100,10 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB                       &kp Q                 &kp W  &kp E  &kp R             &kp T    &kp Y    &kp U      &kp I              &kp O    &kp P                          &kp BSPC
-&kp LEFT_SHIFT                &kp_tap LEFT_SHIFT A  &kp S  &kp D  &kp F             &kp G    &kp H    &kp J      &kp K              &kp L    &kp_tap RIGHT_SHIFT SEMICOLON  &kp SINGLE_QUOTE
-&new_behavior 3 LEFT_CONTROL  &kp Z                 &kp X  &kp C  &kp V             &kp B    &kp N    &kp M      &kp COMMA          &kp DOT  &kp FSLH                       &kp ESC
-                                                           &mo 2  &kp LEFT_COMMAND  &mo 1    &kp RET  &kp SPACE  &kp RIGHT_COMMAND
+&kp TAB           &kp Q                 &kp W  &kp E  &kp R             &kp T    &kp Y    &kp U      &kp I              &kp O    &kp P                          &kp BSPC
+&kp LEFT_SHIFT    &kp_tap LEFT_SHIFT A  &kp S  &kp D  &kp F             &kp G    &kp H    &kp J      &kp K              &kp L    &kp_tap RIGHT_SHIFT SEMICOLON  &kp SINGLE_QUOTE
+&kp LEFT_CONTROL  &new_behavior 3 Z     &kp X  &kp C  &kp V             &kp B    &kp N    &kp M      &kp COMMA          &kp DOT  &kp FSLH                       &kp ESC
+                                               &mo 2  &kp LEFT_COMMAND  &mo 1    &kp RET  &kp SPACE  &kp RIGHT_COMMAND
             >;
         };
 
@@ -127,10 +127,10 @@
 
         controls {
             bindings = <
-&trans  &trans     &kp C_VOL_DN          &kp C_VOL_UP          &trans  &trans    &trans    &trans    &trans  &trans     &trans  &kp BACKSPACE
-&trans  &kp LCTRL  &kp LALT              &kp LGUI              &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans  &trans     &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans  &trans    &trans    &trans    &trans  &trans     &trans  &trans
-                                         &kp LSHFT             &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans            &trans        &trans            &trans    &trans    &kp C_VOL_DN          &kp C_VOLUME_UP       &trans     &trans  &kp BACKSPACE
+&trans  &trans  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &trans    &kp LEFT  &kp DOWN              &kp UP                &kp RIGHT  &trans  &trans
+&trans  &trans  &trans            &trans        &trans            &trans    &trans    &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans     &trans  &trans
+                                  &kp LSHFT     &trans            &trans    &trans    &trans                &trans
             >;
         };
     };

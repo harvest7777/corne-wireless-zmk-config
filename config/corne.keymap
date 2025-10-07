@@ -101,7 +101,7 @@
             display-name = "Base";
             bindings = <
 &kp TAB           &kp Q                 &kp W  &kp E  &kp R             &kp T    &kp Y    &kp U      &kp I              &kp O    &kp P                     &kp BSPC
-&kp LEFT_SHIFT    &kp_tap LEFT_SHIFT A  &kp S  &kp D  &kp F             &kp G    &kp H    &kp J      &kp K              &kp L    &kp_tap RIGHT_SHIFT SEMI  &kp SINGLE_QUOTE
+&kp TAB           &kp_tap LEFT_SHIFT A  &kp S  &kp D  &kp F             &kp G    &kp H    &kp J      &kp K              &kp L    &kp_tap RIGHT_SHIFT SEMI  &kp SINGLE_QUOTE
 &kp LEFT_CONTROL  &new_behavior 3 Z     &kp X  &kp C  &kp V             &kp B    &kp N    &kp M      &kp COMMA          &kp DOT  &kp FSLH                  &kp ESC
                                                &mo 2  &kp LEFT_COMMAND  &mo 1    &kp RET  &kp SPACE  &kp RIGHT_COMMAND
             >;
@@ -109,28 +109,28 @@
 
         coding {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &kp SPACE             &trans
+&trans  &trans  &trans  &trans  &trans      &trans    &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &kp ESCAPE  &trans    &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans      &trans    &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans  &trans
+                        &trans  &trans      &trans    &trans  &kp SPACE             &trans
             >;
         };
 
         math {
             bindings = <
-&kp GRAVE       &kp N1     &kp N2         &kp N3         &kp N4            &kp N5           &kp N6           &kp N7        &kp N8          &kp N9  &kp N0         &kp BACKSPACE
-&kp LEFT_SHIFT  &kp TILDE  &kp BACKSLASH  &kp PIPE       &kp CARET         &kp AMPERSAND    &kp KP_ASTERISK  &kp KP_PLUS   &kp KP_EQUAL    &trans  &kp SEMICOLON  &trans
-&trans          &trans     &trans         &kp LESS_THAN  &kp GREATER_THAN  &trans           &kp KP_SLASH     &kp KP_MINUS  &kp UNDERSCORE  &trans  &trans         &trans
-                                          &trans         &trans            &trans           &trans           &kp SPACE     &trans
+&trans  &kp N1     &kp N2         &kp N3         &kp N4            &kp N5           &kp N6           &kp N7        &kp N8          &kp N9         &kp N0         &trans
+&trans  &kp TILDE  &kp BACKSLASH  &kp PIPE       &kp CARET         &kp AMPERSAND    &kp KP_ASTERISK  &kp KP_PLUS   &kp KP_EQUAL    &kp BACKSPACE  &kp SEMICOLON  &trans
+&trans  &trans     &trans         &kp LESS_THAN  &kp GREATER_THAN  &kp GRAVE        &kp KP_SLASH     &kp KP_MINUS  &kp UNDERSCORE  &trans         &trans         &trans
+                                  &trans         &trans            &trans           &trans           &kp SPACE     &kp LEFT_SHIFT
             >;
         };
 
         controls {
             bindings = <
-&trans  &trans  &trans            &trans        &trans            &trans    &trans    &kp C_VOL_DN          &kp C_VOLUME_UP       &trans     &trans  &kp BACKSPACE
-&trans  &trans  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &trans    &kp LEFT  &kp DOWN              &kp UP                &kp RIGHT  &trans  &trans
-&trans  &trans  &trans            &trans        &trans            &trans    &trans    &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans     &trans  &trans
-                                  &kp LSHFT     &trans            &trans    &trans    &trans                &trans
+&trans  &trans  &trans            &trans        &trans            &trans    &trans    &kp C_VOL_DN          &kp C_VOLUME_UP       &kp BACKSPACE  &trans  &trans
+&trans  &trans  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &trans    &kp LEFT  &kp DOWN              &kp UP                &kp RIGHT      &trans  &trans
+&trans  &trans  &trans            &trans        &trans            &trans    &trans    &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &trans         &trans  &trans
+                                  &trans        &kp LEFT_SHIFT    &trans    &trans    &trans                &trans
             >;
         };
     };

@@ -127,10 +127,10 @@
 
         coding {
             bindings = <
-&trans  &trans  &trans            &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &trans    &trans      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans         &trans   &trans
-&trans  &trans  &kp LEFT_CONTROL  &kp LEFT_ALT      &kp LEFT_COMMAND   &trans    &kp ESCAPE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSPACE  &ctrl_c  &trans
-&trans  &trans  &trans            &trans            &trans             &trans    &kp TAB     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans         &trans   &trans
-                                  &trans            &trans             &trans    &trans      &kp SPACE             &trans
+&trans  &trans  &trans  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &trans       &trans      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans         &trans   &trans
+&trans  &trans  &trans  &kp LEFT_ALT      &kp LEFT_COMMAND   &kp LCTRL    &kp ESCAPE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSPACE  &ctrl_c  &trans
+&trans  &trans  &trans  &trans            &trans             &trans       &kp TAB     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans         &trans   &trans
+                        &trans            &trans             &trans       &trans      &kp SPACE             &trans
             >;
         };
 

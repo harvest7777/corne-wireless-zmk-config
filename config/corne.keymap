@@ -137,7 +137,7 @@
 &trans  &trans  &trans   &trans        &trans            &trans       &trans      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES  &trans   &trans
 &trans  &trans  &tmux_b  &kp LEFT_ALT  &kp LEFT_COMMAND  &kp LCTRL    &kp ESCAPE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSPACE      &ctrl_c  &trans
 &trans  &trans  &trans   &trans        &trans            &trans       &kp TAB     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SINGLE_QUOTE   &trans   &trans
-                         &trans        &trans            &trans       &trans      &kp SPACE             &trans
+                         &trans        &trans            &trans       &tmux_b     &kp SPACE             &trans
             >;
         };
 

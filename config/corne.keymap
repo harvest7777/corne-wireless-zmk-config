@@ -127,7 +127,7 @@
             bindings = <
 &trans  &kp Q                 &kp W                &kp E            &kp R             &kp T    &kp Y                 &kp U      &kp I              &kp O    &kp P                     &trans
 &trans  &kp_tap LEFT_SHIFT A  &kp S                &kp D            &kp F             &kp G    &kp H                 &kp J      &kp K              &kp L    &kp_tap RIGHT_SHIFT SEMI  &trans
-&trans  &x_new_behavior 3 Z   &x_new_behavior 0 X  &kp_tap COLON C  &kp V             &kp B    &kp N                 &kp M      &kp COMMA          &kp DOT  &kp FSLH                  &trans
+&trans  &new_behavior 3 Z     &x_new_behavior 0 X  &kp_tap COLON C  &kp V             &kp B    &kp N                 &kp M      &kp COMMA          &kp DOT  &kp FSLH                  &trans
                                                    &mo 2            &kp LEFT_COMMAND  &mo 1    &kp_tap LEFT_ALT RET  &kp SPACE  &kp RIGHT_COMMAND
             >;
         };

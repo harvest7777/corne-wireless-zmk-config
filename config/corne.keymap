@@ -29,68 +29,15 @@
     };
 
     macros {
-        option_up: option_up {
+        layer2cmd: layer2cmd {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(UP_ARROW)>;
-            label = "OPTION_UP";
-        };
-
-        option_left: option_left {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(LEFT)>;
-            label = "OPTION_LEFT";
-        };
-
-        option_right: option_right {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(RIGHT)>;
-            label = "OPTION_RIGHT";
-        };
-
-        option_down: option_down {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(DOWN)>;
-            label = "OPTION_DOWN";
-        };
-
-        option_backspace: option_backspace {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(BACKSPACE)>;
-            label = "OPTION_BACKSPACE";
-        };
-
-        ctrl_c: ctrl_c {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(C)>;
-            label = "CTRL_C";
-        };
-
-        tmux_b: tmux_b {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(B)>;
-            label = "TMUX_B";
+            bindings = <&kp LGUI &mo 2>;
+            label = "LAYER2CMD";
         };
     };
 
     behaviors {
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-hold-tap";
-            label = "NEW_BEHAVIOR";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-        };
-
         kp_tap: kp_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "KP_TAP";
@@ -102,10 +49,21 @@
             flavor = "tap-preferred";
         };
 
-        x_new_behavior: x_new_behavior {
+        mohold: mohold {
             compatible = "zmk,behavior-hold-tap";
-            label = "X_NEW_BEHAVIOR";
-            bindings = <&tmux_b>, <&kp>;
+            label = "MOHOLD";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+        };
+
+        numcmd: numcmd {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NUMCMD";
+            bindings = <&layer2cmd>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -126,10 +84,10 @@
 
             display-name = "Base";
             bindings = <
-&trans  &kp Q                 &kp W  &kp E  &kp R     &kp T    &kp Y                    &kp U      &kp I              &kp O    &kp P                     &trans
-&trans  &kp_tap LEFT_SHIFT A  &kp S  &kp D  &kp F     &kp G    &kp H                    &kp J      &kp K              &kp L    &kp_tap RIGHT_SHIFT SEMI  &trans
-&trans  &new_behavior 3 Z     &kp X  &kp C  &kp V     &kp B    &kp N                    &kp M      &kp COMMA          &kp DOT  &kp FSLH                  &trans
-                                     &mo 2  &kp LGUI  &mo 1    &kp_tap RIGHT_ALT ENTER  &kp SPACE  &kp RIGHT_COMMAND
+&trans  &kp Q                 &kp W  &kp E  &kp R     &kp T    &kp Y                    &kp U      &kp I           &kp O    &kp P                     &trans
+&trans  &kp_tap LEFT_SHIFT A  &kp S  &kp D  &kp F     &kp G    &kp H                    &kp J      &kp K           &kp L    &kp_tap RIGHT_SHIFT SEMI  &trans
+&trans  &mohold 3 Z           &kp X  &kp C  &kp V     &kp B    &kp N                    &kp M      &kp COMMA       &kp DOT  &kp FSLH                  &trans
+                                     &mo 2  &kp LGUI  &mo 1    &kp_tap RIGHT_ALT ENTER  &kp SPACE  &numcmd 0 RGUI
             >;
         };
 

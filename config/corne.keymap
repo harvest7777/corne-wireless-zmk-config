@@ -93,10 +93,10 @@
 
         coding {
             bindings = <
-&trans  &trans  &trans     &trans         &trans            &trans     &trans      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES  &trans   &trans
-&trans  &trans  &kp LCTRL  &kp LEFT_ALT   &kp LEFT_COMMAND  &trans     &kp ESCAPE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSPACE      &ctrl_c  &trans
-&trans  &trans  &trans     &kp SEMICOLON  &kp COLON         &tmux_b    &kp TAB     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SINGLE_QUOTE   &trans   &trans
-                           &trans         &trans            &trans     &trans      &kp SPACE             &trans
+&trans  &trans  &trans     &trans         &trans            &trans       &trans      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES  &trans     &trans
+&trans  &trans  &kp LCTRL  &kp LEFT_ALT   &kp LEFT_COMMAND  &trans       &kp ESCAPE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSPACE      &kp LC(C)  &trans
+&trans  &trans  &trans     &kp SEMICOLON  &kp COLON         &kp LC(B)    &kp TAB     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp SINGLE_QUOTE   &trans     &trans
+                           &trans         &trans            &trans       &trans      &kp SPACE             &trans
             >;
         };
 
